@@ -4,5 +4,3 @@ layouts/partials/pagination.html
 layouts/posts/list.html
 assets/js/main.js
 node_modules/
-CHANGELOG.md
-.chglog/

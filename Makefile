@@ -18,14 +18,6 @@ format: # @HELP formats files
 format:
 	npm run format
 
-changelog: # @HELP updates CHANGELOG.md
-changelog:
-	git-chglog -o CHANGELOG.md
-
-release: # @HELP releases a new version as defined in ./scripts/release.sh
-release:
-	./scripts/release.sh
-
 help: # @HELP prints this message
 help:
 	echo "TARGETS:"
