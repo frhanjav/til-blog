@@ -12,7 +12,7 @@
 
   {{- if default true site.Params.home.showRecentPosts }}
     {{- $posts := where site.RegularPages "Section" "posts" -}}
-    {{- with $posts.Limit (int (default 3 site.Params.home.recentPostsLimit)) }}
+    {{- with $posts.Limit (int (default 4 site.Params.home.recentPostsLimit)) }}
       <section>
         <h2>Recent posts</h2>
 
@@ -21,14 +21,5 @@
     {{ end -}}
   {{ end -}}
 
-  {{- if default true site.Params.home.showRecentQuotes }}
-    {{- $quotes := where site.RegularPages "Section" "quotes" -}}
-    {{- with $quotes.Limit (int (default 5 site.Params.home.recentQuotesLimit)) }}
-      <section>
-        <h2>Quotes</h2>
 
-        {{ partial "quotes/list.html" . }}
-      </section>
-    {{ end -}}
-  {{ end -}}
 {{ end }}

@@ -3,16 +3,13 @@
     {{- range . }}
       <li class="mb-6">
         <article class="flex flex-col space-y-1">
-          <header>
-            <h3 class="text-lg font-semibold leading-none">
-              <a
-                href="{{ .RelPermalink }}"
-                class="underline decoration-slate-300 decoration-2 underline-offset-4 hover:decoration-inherit"
-                >{{ .Title }}</a
-              >
-            </h3>
-          </header>
-          <div class="text-sm">{{ .Summary }}</div>
+          <div class="text-sm">
+            <a
+              href="{{ .RelPermalink }}"
+              class="underline decoration-slate-300 decoration-2 underline-offset-4 hover:decoration-inherit"
+              >{{ .Summary }}</a
+            >
+          </div>
         </article>
       </li>
     {{- end }}

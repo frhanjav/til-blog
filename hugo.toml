@@ -60,8 +60,8 @@ enableRobotsTXT = true # IMPORTANT: set to true if you want to use the theme's g
     showRecentPosts = true
 
     # Set how many recent blog posts to show.
-    # Default: 3
-    recentPostsLimit = 3
+    # Default: 4
+    recentPostsLimit = 4
 
     # Display recent quotes on the homepage.
     # Default: true
