@@ -1,0 +1,8 @@
+{{- $birthYear := 2003 -}}
+{{- $birthMonth := 12 -}}
+{{- $birthDay := 05 -}}
+{{- $age := sub now.Year $birthYear -}}
+{{- if or (lt now.Month $birthMonth) (and (eq now.Month $birthMonth) (lt now.Day $birthDay)) -}}
+  {{- $age = sub $age 1 -}}
+{{- end -}}
+{{- $age -}}
