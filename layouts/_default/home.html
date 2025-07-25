@@ -21,13 +21,13 @@
     {{ end -}}
   {{ end -}}
 
-  {{- if default true site.Params.home.showRecentNotes }}
-    {{- $notes := where site.RegularPages "Section" "notes" -}}
-    {{- with $notes.Limit (int (default 5 site.Params.home.recentNotesLimit)) }}
+  {{- if default true site.Params.home.showRecentQuotes }}
+    {{- $quotes := where site.RegularPages "Section" "quotes" -}}
+    {{- with $quotes.Limit (int (default 5 site.Params.home.recentQuotesLimit)) }}
       <section>
-        <h2>Recent notes</h2>
+        <h2>Quotes</h2>
 
-        {{ partial "notes/list.html" . }}
+        {{ partial "quotes/list.html" . }}
       </section>
     {{ end -}}
   {{ end -}}

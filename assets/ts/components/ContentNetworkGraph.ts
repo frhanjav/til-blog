@@ -34,7 +34,7 @@ const NETWORK_OPTIONS: Options = {
   groups: {
     useDefaultGroups: false,
     posts: {},
-    notes: {}
+    quotes: {}
   },
   interaction: {
     hover: true

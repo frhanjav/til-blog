@@ -8,12 +8,12 @@
         {{ partial "posts/list.html" . }}
       </section>
     {{ end }}
-    {{- $notes := where .RegularPages "Section" "notes" -}}
-    {{ with $notes }}
+    {{- $quotes := where .RegularPages "Section" "quotes" -}}
+    {{ with $quotes }}
       <section>
-        <h2>Notes on {{ $.Title }}</h2>
+        <h2>Quotes on {{ $.Title }}</h2>
 
-        {{ partial "notes/list.html" . }}
+        {{ partial "quotes/list.html" . }}
       </section>
     {{ end }}
   </div>

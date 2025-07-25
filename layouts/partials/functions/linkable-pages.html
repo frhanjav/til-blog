@@ -1,5 +1,5 @@
 {{/* Returns linkable pages and ensures all backlinks are properly registered by forcing the rendering of all pages. */}}
-{{- $pages := where site.RegularPages ".Section" "in" ( slice "posts" "notes" ) -}}
+{{- $pages := where site.RegularPages ".Section" "in" ( slice "posts" ) -}}
 {{- range $pages -}}
   {{- $noop := .Content -}}
 {{- end -}}

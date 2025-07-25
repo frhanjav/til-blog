@@ -1,20 +1,20 @@
 {{- $noop := partialCached "functions/linkable-pages" . -}}
 {{- $incomingPosts := slice -}}
 {{- $outgoingPosts := slice -}}
-{{- $incomingNotes := slice -}}
-{{- $outgoingNotes := slice -}}
-{{- with .Scratch.Get "incoming" -}}
-  {{- $incomingPosts = where . "Section" "posts" -}}
-  {{- $incomingNotes = where . "Section" "notes" -}}
-{{- end -}}
-{{- with .Scratch.Get "outgoing" -}}
-  {{- $outgoingNotes = where . "Section" "notes" -}}
-  {{- $outgoingPosts = where . "Section" "posts" -}}
-{{- end -}}
+  {{- $incomingQuotes := slice -}}
+  {{- $outgoingQuotes := slice -}}
+  {{- with .Scratch.Get "incoming" -}}
+    {{- $incomingPosts = where . "Section" "posts" -}}
+    {{- $incomingQuotes = where . "Section" "quotes" -}}
+  {{- end -}}
+  {{- with .Scratch.Get "outgoing" -}}
+    {{- $outgoingQuotes = where . "Section" "quotes" -}}
+    {{- $outgoingPosts = where . "Section" "posts" -}}
+  {{- end -}}
 {{- $relatedPosts := where (.Site.RegularPages.Related .) "Section" "posts" | first 5 -}}
-{{- $relatedNotes := where (.Site.RegularPages.Related .) "Section" "notes" | first 5 -}}
+  {{- $relatedQuotes := where (.Site.RegularPages.Related .) "Section" "quotes" | first 5 -}}
 {{- $postsCount := add ( len $incomingPosts ) ( len $outgoingPosts ) ( len $relatedPosts ) -}}
-{{- $notesCount := add ( len $incomingNotes ) ( len $outgoingNotes ) ( len $relatedNotes ) -}}
+  {{- $quotesCount := add ( len $incomingQuotes ) ( len $outgoingQuotes ) ( len $relatedQuotes ) -}}
 <aside class="not-prose flex flex-col space-y-8 border-t pt-6">
   {{- with .GetTerms "categories" }}
     <section class="flex flex-col space-y-4">
@@ -50,7 +50,7 @@
     </section>
   {{- end }}
 
-  {{- if default true site.Params.showGraph }}
+  {{- if and (default true site.Params.showGraph) (ne .Section "quotes") }}
     <section class="flex flex-col space-y-4" aria-hidden="true">
       <h2 class="flex flex-row items-center space-x-2 text-lg font-semibold">
         {{ partial "svg/chart-network" }}
@@ -103,14 +103,14 @@
     </section>
   {{- end }}
 
-  {{- if gt $notesCount 0 }}
+  {{- if gt $quotesCount 0 }}
     <section class="flex flex-col space-y-4">
       <h2 class="flex flex-row items-center space-x-2 text-lg font-semibold">
-        {{ partial "svg/notebook-text" }}
-        <span>Notes</span>
+        {{ partial "svg/quote" }}
+        <span>Quotes</span>
       </h2>
 
-      {{- with $incomingNotes }}
+      {{- with $incomingQuotes }}
         <section class="flex flex-col space-y-1">
           <h3 class="flex flex-row items-center space-x-2 text-sm font-semibold">
             {{ partial "svg/arrow-down-to-dot" }}
@@ -121,7 +121,7 @@
         </section>
       {{- end }}
 
-      {{- with $outgoingNotes }}
+      {{- with $outgoingQuotes }}
         <section class="flex flex-col space-y-1">
           <h3 class="flex flex-row items-center space-x-2 text-sm font-semibold">
             {{ partial "svg/arrow-up-from-dot" }}
@@ -132,7 +132,7 @@
         </section>
       {{- end }}
 
-      {{- with $relatedNotes }}
+      {{- with $relatedQuotes }}
         <section class="flex flex-col space-y-1">
           <h3 class="flex flex-row items-center space-x-2 text-sm font-semibold">
             {{ partial "svg/approximate-equals" }}

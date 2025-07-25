@@ -16,8 +16,8 @@ enableRobotsTXT = true # IMPORTANT: set to true if you want to use the theme's g
 
 [menus]
   [[menus.main]]
-    name = 'Notes'
-    pageRef = '/notes'
+    name = 'Quotes'
+    pageRef = '/quotes'
     weight = 20
   [[menus.main]]
     name = 'Posts'
@@ -44,7 +44,7 @@ enableRobotsTXT = true # IMPORTANT: set to true if you want to use the theme's g
   # Default: :date_long
   dateFormat = ':date_long'
 
-  # Show content graph for single notes and posts.
+  # Show content graph for single quotes and posts.
   # Default: true
   showGraph = true
 
@@ -63,21 +63,21 @@ enableRobotsTXT = true # IMPORTANT: set to true if you want to use the theme's g
     # Default: 3
     recentPostsLimit = 3
 
-    # Display recent notes on the homepage.
+    # Display recent quotes on the homepage.
     # Default: true
-    showRecentNotes = true
+    showRecentQuotes = true
 
-    # Set how many recent notes to show.
+    # Set how many recent quotes to show.
     # Default: 5
-    recentNotesLimit = 5
+    recentQuotesLimit = 5
 
-  # Notes page setup
-  [params.notes]
-    # Set the number of notes to list on each page.
+  # Quotes page setup
+  [params.quotes]
+    # Set the number of quotes to list on each page.
     # Default: 20
     pageSize = 20
 
-    # Show a filter option for note categories above the notes list.
+    # Show a filter option for note categories above the quotes list.
     # Default: true
     showCategoryFilter = true
 

@@ -32,7 +32,7 @@
     {{ .Content }}
   </article>
 
-  {{- if or (eq .Section "posts") (eq .Section "notes") }}
+  {{- if or (eq .Section "posts") (eq .Section "quotes") }}
     {{ partial "page/meta" . }}
   {{- end }}
 {{ end }}

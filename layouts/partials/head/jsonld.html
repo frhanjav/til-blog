@@ -8,7 +8,7 @@
   "headline" ( $title | plainify | htmlUnescape | title )
   "description" ( $description | plainify | htmlUnescape )
 -}}
-{{- if and .IsPage ( or ( eq .Section "posts" ) ( eq .Section "notes" ) ) -}}
+{{- if and .IsPage ( or ( eq .Section "posts" ) ( eq .Section "quotes" ) ) -}}
   {{- $data = merge $data ( partial "head/jsonld/blogPosting" . ) -}}
 {{- end -}}
 {{- with $author -}}{{ $data = merge $data ( dict "author" . ) }}{{- end -}}

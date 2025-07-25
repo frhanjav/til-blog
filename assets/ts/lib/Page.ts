@@ -29,8 +29,8 @@ export default class Page {
     if (!this._section) {
       if (this.permalink.includes('/posts/')) {
         this._section = 'posts';
-      } else if (this.permalink.includes('/notes/')) {
-        this._section = 'notes';
+      } else if (this.permalink.includes('/quotes/')) {
+        this._section = 'quotes';
       } else {
         throw new Error(`Unable to determine page section from '${this.permalink}' permalink`);
       }
