@@ -1,7 +1,7 @@
 ---
-title: Hey there 👋
+title: Hi!
 date: 2025-05-11
 ---
 
-{{< age >}}, engineer.
+<!-- I'm {{< age >}}, engineer. -->
 {.lead}
